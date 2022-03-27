@@ -20,12 +20,22 @@ Rem Taken from More BASIC Computer Games by Chris Cerf
 140 Data 5,7,15,6,8,17,1,1,7,9,8,10,18,2,9,11
 150 Data 10,12,19,3,11,13,12,14,20,4,13,15,6,14,16
 160 Data 15,17,20,7,16,8,9,17,19,11,18,20,13,16,19
-170 DEF FNA(X)=INT(20*RND(1))+1
-180 DEF FNB(X)=INT(3*RND(1))+1
-190 DEF FNC(X)=INT(4*RND(1))+1
-200 REM- LOCATE L ARRAY ITEMS
-210 REM- 1-YOU, 2-WUMPUS, 3&4-PITS, 5&6-BATS
-220 DIM L(6),M(6)
+
+Function FNA (X)
+    171 X = Int(20 * Rnd(1)) + 1
+End Function
+
+Function FNB (X)
+    181 X = Int(3 * Rnd(1)) + 1
+End Function
+
+Function FNC (x)
+    192 x = Int(4 * Rnd(1)) + 1
+End Function
+
+Rem LOCATE L ARRAY ITEMS
+Rem- 1-YOU, 2-WUMPUS, 3&4-PITS, 5&6-BATS
+240 DIM L(6),M(6)
 230 FOR J=1 TO 6
 240 L(J)-FNA(0)
 260 M(J)=L(J)
@@ -41,7 +51,7 @@ Rem Taken from More BASIC Computer Games by Chris Cerf
 360 A=5
 365 L=L(1)
 270 REM- RUN THE GAME
-375 PRINT "HUNT THE TUMPUS"
+375 PRINT "HUNT THE WUMPUS"
 380 REM- HAZARD WARNINGS & LOCATIONS
 390 GOSUB 2000
 400 REM- MOVE OR SHOOT
